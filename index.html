@@ -54,7 +54,23 @@
   <section>
     <div class="container">
       <div class="box">
-
+          <div class="show">
+            <img id="showimg" src="images/image-product-1.jpg" alt="">
+          </div>
+          <div class="slides">
+              <span class="active">
+                <img data-img="1" src="images/image-product-1-thumbnail.jpg" alt="">
+              </span>
+              <span>
+                <img data-img="2" src="images/image-product-2-thumbnail.jpg" alt="">
+              </span>
+              <span>
+                <img data-img="3" src="images/image-product-3-thumbnail.jpg" alt="">
+              </span>
+              <span>
+                <img data-img="4" src="images/image-product-4-thumbnail.jpg" alt="">
+              </span>
+          </div>
       </div>
       <div class="box">
         <span>Sneaker Company</span> 
@@ -72,7 +88,7 @@
         </div>
         <div class="bottom-line">
           <div class="counter">
-            <span>-</span> 0 <span>+</span>
+            <span class="s" id="minus">-</span> <span id="number">0</span> <span class="s" id="plus">+</span>
           </div>
 
           <button class="addToCart">
