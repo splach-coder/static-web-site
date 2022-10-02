@@ -5,8 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- style sheet -->
+  <link rel="stylesheet" href="css/sneakers.css">
+  <!-- normalize sheet -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="css/all.min.css">
+
+  <!-- goolge font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -15,30 +27,72 @@
   </style>
 </head>
 <body>
+  <header class="toggle">
+    <div class="container">
+    <i class="fas fa-bars menu" id="menu-bar"></i>
+    <h4 class="logo">Sneakers</h4>
+    <nav>
+      <ul>
+        <li class="exit-btn"><i class="fas fa-close" id="close-btn"></i></li>
+        <li><a href="">Collections</a> </li>
+        <li><a href="">Men</a> </li>
+        <li><a href="">Women</a> </li>
+        <li><a href="">About</a> </li>
+        <li><a href="">Contact</a> </li>
+      </ul>
+    </nav>
+    <div class="side">
+        <div class="panel">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <div class="profile">
+            <img src="images/image-avatar.png" alt="">
+        </div>
+    </div>
+  </div>
+  </header>
+  <section>
+    <div class="container">
+      <div class="box">
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+      </div>
+      <div class="box">
+        <span>Sneaker Company</span> 
+        <h2>Fall Limited Edition Sneakers</h2>
+        <p>
+          These low-profile sneakers are your perfect casual wear <br> companion. Featuring a
+        durable rubber outer sole, they’ll <br> withstand everything the weather can offer.
+        </p>
+        <div class="price">
+          <span>$125.00</span>
+          <span>50%</span>
+        </div>
+        <div class="old-price">
+          $250.00
+        </div>
+        <div class="bottom-line">
+          <div class="counter">
+            <span>-</span> 0 <span>+</span>
+          </div>
 
-  Sneaker Company
-
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-  
+          <button class="addToCart">
+            <i class="fas fa-cart-shopping"></i> Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+
+
+  <!-- scripts -->
+  <!-- jquery -->
+  <script src="js/jquery.js"></script>
+  <!-- js script -->
+  <script src="js/script.js"></script>
 </body>
 </html>
