@@ -41,13 +41,36 @@ $(document).ready(function(){
 
 
     // Ripple animation
-    let buttons = document.querySelector;
-
-    
     $(".box .addToCart").click(function(e){
+        //riffle effect
+        riffle($(this), e);
 
-        const x = e.pageX - $(this).offset().left;
-        const y = e.pageY - $(this).offset().top;
+
+        if($(".cart").hasClass("hidden"))
+            $(".cart").removeClass("hidden");
+        
+        if(!$(".cart").hasClass("filled")){
+            $(".cart").addClass("filled");
+
+
+            $("")
+        }
+        else{
+          alert("item deja filled")  
+        }
+    })
+
+    $(".side i").click(function(){
+        $(".cart").toggleClass("hidden");
+    })
+
+    $(".cart.filled .body .row:last-child button").click(function(e){
+        riffle($(this), e);
+    })
+
+    function riffle(btn, e){
+        const x = e.pageX - btn.offset().left;
+        const y = e.pageY - btn.offset().top;
 
         console.log(`${x} -- ${y}`);
 
@@ -57,15 +80,14 @@ $(document).ready(function(){
         ripple.style.left = `${x}px`;
         ripple.style.top  = `${y}px`;
 
-        $(this).append(ripple);
+        btn.append(ripple);
 
         setTimeout(() => {
           ripple.remove();
         }, 1000)
-    })
+    }
 
-
-
+    
     //animation js
     $("header li a").click(function(){
 
