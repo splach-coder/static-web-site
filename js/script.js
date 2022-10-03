@@ -44,10 +44,10 @@ $(document).ready(function(){
     let buttons = document.querySelector;
 
     
-    $(".addToCart").click(function(e){
+    $(".box .addToCart").click(function(e){
 
-        const x = e.clientX - e.target.offsetLeft;
-        const y = e.clientY - e.target.offsetTop;
+        const x = e.pageX - $(this).offset().left;
+        const y = e.pageY - $(this).offset().top;
 
         console.log(`${x} -- ${y}`);
 
@@ -55,7 +55,7 @@ $(document).ready(function(){
         ripple.classList.add("ripple");
 
         ripple.style.left = `${x}px`;
-        ripple.style.top = `${y}px`;
+        ripple.style.top  = `${y}px`;
 
         $(this).append(ripple);
 
@@ -63,6 +63,33 @@ $(document).ready(function(){
           ripple.remove();
         }, 1000)
     })
+
+
+
+    //animation js
+    $("header li a").click(function(){
+
+        $("header li a").each(function(){
+            $(this).removeClass("active");
+        })
+
+        $(this).addClass("active")
+
+        console.log($(this).offset())
+
+        var a = $(this).offset().left - 347.0249938964844;
+
+        anime({
+            targets: ".swiper",
+            width: `calc(${$(this).width()}px + 20px)`,
+            padding: "20px",
+            left: `${a}px`,
+            duration: 1000
+        }) 
+    })
+
+
+
     
 })
 
