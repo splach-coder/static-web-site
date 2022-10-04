@@ -337,9 +337,18 @@ header .side img {
 /* Start Section */
 section {
 	position: relative;
-	width: 100%;
+	max-width: 100%;
 	height: calc(100vh - 170px);
 }
+
+@media (max-width: 768px) {
+	header .side img {
+		height: 20px;
+		margin-left: 30px;
+	}
+}
+
+
 
 section .container {
 	position: relative;
