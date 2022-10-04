@@ -45,6 +45,7 @@ $(document).ready(function(){
         //riffle effect
         riffle($(this), e);
 
+        if($("#number").text() > 0){
 
         if($(".cart").hasClass("hidden"))
             $(".cart").removeClass("hidden");
@@ -52,21 +53,52 @@ $(document).ready(function(){
         if(!$(".cart").hasClass("filled")){
             $(".cart").addClass("filled");
 
+            let price = $(".unit_price").text();
+            let quantity = $("#number").text();
+            let sum_price = eval(price * quantity);
 
-            $("")
+
+            $(".cart .body").empty();
+
+            $(".cart .body").append(`
+            <div class="row">
+            <div class="img">
+              <img src="images/image-product-1-thumbnail.jpg" alt="">
+            </div>
+            <div class="text">
+                <span>Fall Limited edition sneakers </span> <br>
+                <span class="sum-price">$${price} x ${quantity} <span class="price">$${sum_price}</span></span>
+            </div>
+            <div class="icon">
+              <i class="fas fa-trash"></i>
+            </div>
+          </div>
+          <div class="row">
+            <button>Check Out</button>
+          </div>
+            `)
         }
         else{
           alert("item deja filled")  
         }
+    }
     })
 
     $(".side i").click(function(){
         $(".cart").toggleClass("hidden");
     })
 
-    $(".cart.filled .body .row:last-child button").click(function(e){
-        riffle($(this), e);
+    // $(".cart.filled .body .row:last-child button").click(function(e){
+    //     riffle($(this), e);
+    // })
+
+    $(document).on('click', '.icon i', function(){
+        $(".cart .body").empty();
+        $(".cart .body").append(`<h4>your cart is empty.</h4>`);
+        $(".cart").removeClass("filled");
     })
+
+    $(document).on('click', '.cart.filled .body .row:last-child button', function(e) { riffle($(this), e); })
 
     function riffle(btn, e){
         const x = e.pageX - btn.offset().left;
@@ -109,6 +141,22 @@ $(document).ready(function(){
             duration: 1000
         }) 
     })
+
+    setInterval(function(){
+        ntfcs()
+    }, 1000)
+
+    // function for notfications
+    function ntfcs(){
+        const ntfs = $('.cart.filled .body .row').length;
+        if(ntfs > 0){
+            $(".panel").addClass("ntfc");
+            $(".cart-nbr").text(ntfs - 1);
+        }else{
+            $(".panel").removeClass("ntfc");
+        }
+        
+    }
 
 
 
