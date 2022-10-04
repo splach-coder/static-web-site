@@ -341,15 +341,6 @@ section {
 	height: calc(100vh - 170px);
 }
 
-@media (max-width: 768px) {
-	header .side img {
-		height: 20px;
-		margin-left: 30px;
-	}
-}
-
-
-
 section .container {
 	position: relative;
 	display: flex;
@@ -359,10 +350,41 @@ section .container {
 	margin: 60px auto;
 }
 
+@media (max-width: 1091px) {
+	section {
+		width: 100%;
+		height: auto;
+	}
+
+	section .container {
+		margin: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	section .container {
+		width: 100%;
+		flex-direction: column;
+	}
+}
+
 section .container .box {
 	flex-basis: 40%;
 	height: 100%;
 	display: flex;
+}
+
+@media (max-width: 1091px) {
+	section .container .box {
+		flex-basis: 45%;
+	}
+}
+
+@media (max-width: 768px) {
+	section .container .box {
+		flex-basis: 100%;
+		width: 100%;
+	}
 }
 
 .box:first-child {
@@ -371,10 +393,30 @@ section .container .box {
 	align-items: center;
 	justify-content: space-between;
 	padding: 15px 0;
+	overflow: hidden;
+	position: relative;
+}
+
+@media (max-width: 768px) {
+	.box:first-child {
+		max-width: 100%;
+		position: relative;
+		top: 0;
+		left: 0;
+		max-height: 35%;
+		overflow: hidden;
+	}
+}
+
+@media (max-width: 1091px) {
+	.box:first-child {
+		overflow: hidden;
+		position: relative;
+	}
 }
 
 .box:first-child .show {
-	width: 60%;
+	width: 92%;
 	height: 80%;
 	border-radius: 15px;
 	overflow: hidden;
@@ -383,19 +425,50 @@ section .container .box {
 .box:first-child .show img {
 	width: 100%;
 	height: 100%;
+	cursor: zoom-in;
+}
+
+@media (max-width: 768px) {
+	.box:first-child .show {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		border-radius: 0;
+		overflow: hidden;
+	}
+
+	.box:first-child .show img {
+		width: 100%;
+		height: 100%;
+		cursor: zoom-in;
+	}
 }
 
 .box:first-child .slides {
 	display: flex;
 	justify-content: center;
-	width: 100%;
+	max-width: 100%;
+}
+
+@media (max-width: 768px) {
+	.box:first-child .slides {
+		display: none;
+	}
 }
 
 .box:first-child .slides span {
-	flex-basis: 16%;
+	width: 25%;
+	margin-top: 30px;
 	max-height: 90px;
 	text-align: center;
 	position: relative;
+}
+
+@media (max-width: 1091px) {
+	.box:first-child .slides span {
+		width: 25%;
+		margin-top: 30px;
+	}
 }
 
 .box:first-child .slides span img {
@@ -416,7 +489,7 @@ section .container .box {
 .box:last-child {
 	flex-direction: column;
 	justify-content: center;
-	min-width: 500px;
+	max-width: 500px;
 }
 
 .box:last-child > span {
